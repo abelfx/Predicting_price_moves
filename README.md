@@ -56,8 +56,10 @@ We use the **Financial News and Stock Price Integration Dataset (FNSPID)**, whic
   - Descriptive statistics: headline length, publisher frequency, publication trends.
   - Topic modeling and sentiment scoring for headlines.
 - **Task 2 – Quantitative Analysis:**
+  - Stock data preparation and alignment.
   - Technical indicators (SMA, EMA, RSI, MACD, Bollinger Bands, ATR, OBV, Stochastic, ADX) for all tickers.
   - Merges stock prices with headline events and calculates daily returns.
+  - Visualization of indicators against historical stock prices.
 - **Task 3 – Sentiment Correlation:**
 
   - Sentiment analysis on headlines for AMZN, GOOG, NVDA, MSFT.
@@ -66,10 +68,6 @@ We use the **Financial News and Stock Price Integration Dataset (FNSPID)**, whic
   - Text analysis: keyword extraction, topic modeling.
   - Time series analysis: publication spikes and patterns.
 
-- **Task 2 – Quantitative Analysis:**
-  - Stock data preparation and alignment.
-  - Technical indicators: Moving Averages (MA), Relative Strength Index (RSI), MACD.
-  - Visualization of indicators against historical stock prices.
 
 ## Key EDA Activities
 
@@ -116,3 +114,4 @@ pip install -r requirements.txt
 2. Place raw and processed data files in the `data/` folder.
 3. Open notebooks in VS Code or Jupyter Lab and run cells sequentially.
 4. Review results and visualizations for insights.
+
