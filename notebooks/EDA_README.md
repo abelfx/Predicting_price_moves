@@ -1,5 +1,35 @@
 # EDA and Sentiment Analysis Notebook
 
+This notebook performs exploratory data analysis (EDA) and sentiment analysis on financial news headlines, supporting downstream correlation analysis with stock returns.  
+It is part of the **Predicting Price Moves with News Sentiment** project.
+
+## Overview
+
+- Loads the raw analyst ratings dataset (`raw_analyst_ratings.csv`).
+- Ensures date columns are timezone-aware (UTC-4).
+- Computes basic descriptive statistics on headlines (length, counts, etc.).
+- Preprocesses text (cleaning, stopword removal, tokenization).
+- Conducts topic modeling using frequent words and n-grams.
+- Applies sentiment scoring using VADER.
+- Performs time series analysis of publication patterns.
+- Analyzes publisher activity and domains.
+- Prepares sentiment scores for downstream correlation analysis with stock price movements (see Sentiment Correlation notebook).
+
+## Usage
+
+1. Open notebook in Jupyter Lab or VS Code.
+2. Ensure `data/` folder contains `raw_analyst_ratings.csv`.
+3. Install dependencies:
+
+```bash
+pip install -r ../requirements.txt
+```
+
+4. Run cells sequentially to reproduce analysis.
+5. Use output sentiment scores for further analysis in the Sentiment Correlation notebook.
+
+# EDA and Sentiment Analysis Notebook
+
 This notebook performs exploratory data analysis (EDA) and sentiment analysis on financial news headlines.  
 It is part of the **Predicting Price Moves with News Sentiment** project.
 
@@ -17,30 +47,36 @@ It is part of the **Predicting Price Moves with News Sentiment** project.
 ## Key Sections
 
 1. **Load Dataset**
+
    - Reads CSV into Pandas.
    - Converts date column to UTC timezone.
    - Prints initial rows and dataset size.
 
 2. **Descriptive Statistics**
+
    - Calculates headline lengths.
    - Counts articles per publisher.
    - Generates summary statistics.
 
 3. **Text Preprocessing**
+
    - Cleans headlines (removes URLs, non-alphanumeric chars, converts to lowercase).
    - Removes stopwords.
    - Computes token counts.
 
 4. **Topic Modeling**
+
    - Uses `CountVectorizer` to extract frequent words and bigrams.
    - Sorts terms by frequency to detect common market events or themes.
 
 5. **Sentiment Scoring**
+
    - Uses `VADER` sentiment analysis.
    - Adds compound sentiment score to dataset.
    - Samples dataset if large for faster processing.
 
 6. **Time Series Analysis**
+
    - Aggregates articles per day and per hour.
    - Plots daily publication counts.
    - Plots hourly distribution of news release times.
@@ -60,12 +96,13 @@ It is part of the **Predicting Price Moves with News Sentiment** project.
 ```bash
 pip install -r ../requirements.txt
 ```
+
 4. Run cells sequentially to reproduce EDA and sentiment analysis.
 
-
 Output
+
 - Cleaned and tokenized dataset with sentiment scores.
-Plots:
+  Plots:
 - Articles per day
 - Articles by hour
 - Top publishers and domains

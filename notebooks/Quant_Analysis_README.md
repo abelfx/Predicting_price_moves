@@ -1,6 +1,6 @@
 # Quantitative Stock Analysis Notebook
 
-This notebook performs quantitative analysis on historical stock data and integrates news headlines.  
+This notebook performs quantitative analysis on historical stock data, integrates news headlines, and supports multi-ticker sentiment correlation analysis.  
 It is part of the **Predicting Price Moves with News Sentiment** project.
 
 ## Overview
@@ -11,19 +11,23 @@ It is part of the **Predicting Price Moves with News Sentiment** project.
 - Merges stock prices with daily aggregated headlines.
 - Calculates daily returns and next-day returns.
 - Visualizes price charts with technical indicators and highlights headline events.
+- Prepares technical and headline features for downstream sentiment correlation analysis (see Sentiment Correlation notebook).
 
 ## Key Sections
 
 1. **Load Dataset**
+
    - Reads CSVs for each ticker.
    - Parses `Date` column and sorts chronologically.
    - Raises error if file missing.
 
 2. **Technical Indicators**
+
    - Functions to compute RSI, MACD, Bollinger Bands, ATR, OBV, Stochastic, ADX.
    - Adds indicators to each ticker’s dataframe.
 
 3. **Merge Headlines with Prices**
+
    - Reads `raw_analyst_ratings.csv`.
    - Normalizes dates and aggregates headlines per day.
    - Merges with stock prices to create combined dataframe with:
@@ -43,14 +47,16 @@ It is part of the **Predicting Price Moves with News Sentiment** project.
    - `raw_analyst_ratings.csv`
    - Stock CSVs (one per ticker)
 3. Install dependencies:
+
 ```bash
 pip install -r ../requirements.txt
 ```
+
 4. Run cells sequentially to reproduce analysis.
+5. Use processed outputs for further analysis in the Sentiment Correlation notebook.
 
 Output:
+
 - Stock dataframes with technical indicators.
 - Merged dataset with headlines and stock movements.
 - Interactive plots for each ticker with headline markers.
-
-
